@@ -5,13 +5,71 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Overpass:wght@300;400&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
-    <script defer src="./src/index.js"></script>
+    <link rel="stylesheet" href="./css/utilities.css">
+    <script defer src="./src/index.js" type="module"></script>
     <title>Contact Book</title>
 </head>
 
 <body>
+    <h1 class="title">Contact Book</h1>
+    <main class="main">
+        <section class="options">
+            <div class="options__option">
+                <div class="search-bar">
+                    <input class="search-bar__input" type="search" placeholder="Search...">
+                    <a href="#" class="search-bar__button">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="options__option">
+                <a id="btn-new-contact" href="#" class="button">
+                    <i class="fas fa-user-plus"></i>
+                </a>
+            </div>
+        </section>
+        <section class="contacts">
+            <div class="contacts__list">
+                <article class="contact">
+                    <figure class="contact__avatar">
+                        <img src="" alt="Avatar" class="contact__photo">
+                    </figure>
+                    <div class="contact__body">
+                        <h3 class="contact__name">Name</h3>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
 
+    <aside id="add-modal" class="modal">
+        <div class="modal__content">
+            <div class="add">
+                <h2 class="add__title">Add Contact</h2>
+                <form action="#" id="add-form" class="add__form">
+                    <div class="input-group input-group--photo">
+                        <i class="input-group__icon fas fa-camera"></i>
+                    </div>
+                    <div class="input-group">
+                        <input class="input-group__input" id="add-name" name="add-name" type="text" required placeholder="Name">
+                    </div>
+                    <div class="input-group">
+                        <input class="input-group__input" id="add-phone" name="add-phone" type="tel" required placeholder="312 345 6789">
+                    </div>
+                    <div class="input-group">
+                        <input class="input-group__input" id="add-email" name="add-email" type="email" placeholder="example@mail.com">
+                    </div>
+                    <div class="input-group">
+                        <input class="input-group__input" id="add-address" name="add-address" type="text" placeholder="Address">
+                    </div>
+                    <button type="submit" class="button button--add">Add</button>
+                </form>
+            </div>
+        </div>
+    </aside>
 </body>
 
 </html>

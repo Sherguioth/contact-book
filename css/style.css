@@ -3,3 +3,148 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    background-color: #1d2127;
+    color: #f3f3f3;
+    font-family: "Overpass", sans-serif;
+}
+
+.title {
+    text-align: center;
+    margin: 2rem 0 0 0;
+    font-size: 36px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 300px;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+.options__option {
+    display: flex;
+    align-items: center;
+    min-width: 3rem;
+    height: 5rem;
+    padding: 1em;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #2d323a;
+    padding: 10px 15px;
+    border-radius: 50px;
+}
+
+.search-bar__input {
+    background-color: #2d323a;
+    color: #f3f3f3;
+    border: none;
+    outline: none;
+    width: 20rem;
+    min-width: 10rem;
+}
+
+.search-bar__button {
+    color: #f3f3f3;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    background-color: #181e69;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.contacts__list {
+    display: flex;
+    padding: 1em;
+    border-radius: 10px;
+    min-width: 600px;
+    background-color: #2d323a;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    background-color: #262d36;
+    border-radius: 10px;
+    width: 35rem;
+    padding: 1rem;
+}
+
+.contact__avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2em;
+    height: 5rem;
+    width: 5rem;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.contact__photo {
+    max-width: 100%;
+}
+
+.add {
+    color: white;
+    padding: 2rem;
+}
+
+.add__title {
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+    margin-bottom: 1rem;
+}
+
+.input-group__input {
+    color: white;
+    background-color: #262d36;
+    border-radius: 50px;
+    font-size: 14px;
+    padding: 1em 1.5em;
+    border: none;
+    outline: none;
+}
+
+.input-group--photo {
+    display: flex;
+    align-items: center;
+    background-color: darkorange;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    margin: 1rem auto 2rem auto;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.button--add {
+    border-radius: 10px;
+    width: 6rem;
+    margin: 2rem auto auto auto;
+}
