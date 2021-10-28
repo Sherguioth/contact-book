@@ -1,10 +1,10 @@
-import Modal from "./components/modal.js";
+import Model from "./model.js";
+import View from "./view.js";
 
-const btnNewContact = document.getElementById("btn-new-contact");
-const addModal = document.getElementById("add-modal");
+document.addEventListener("DOMContentLoaded", () => {
+    const model = new Model();
+    const view = new View();
 
-const modalAddContact = new Modal(addModal);
-
-btnNewContact.onclick = () => {
-    modalAddContact.open();
-};
+    model.setView(view);
+    view.setModel(model);
+});

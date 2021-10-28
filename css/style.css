@@ -72,10 +72,16 @@ body {
 
 .contacts__list {
     display: flex;
+    flex-direction: column;
     padding: 1em;
     border-radius: 10px;
     min-width: 600px;
     background-color: #2d323a;
+}
+
+.contacts__item {
+    list-style: none;
+    margin-bottom: 1rem;
 }
 
 .contact {
