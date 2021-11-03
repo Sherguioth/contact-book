@@ -15,7 +15,15 @@ export default class NewContactForm {
                 console.error("Name and phone required");
             } else {
                 callback(this._name.value, this._phone.value, this._email.value, this._address.value);
+                this.cleanFields();
             }
         };
+    }
+
+    cleanFields() {
+        this._name.value = "";
+        this._phone.value = "";
+        this._email.value = "";
+        this._address.value = "";
     }
 }

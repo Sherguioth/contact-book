@@ -23,7 +23,15 @@ export default class View {
         this._model = model;
     }
 
+    render() {
+        const contacts = this._model.getContacts();
+        contacts.forEach((contact) => {
+            this._contactList.addContact({ ...contact });
+        });
+    }
+
     addContact(contact) {
+        this._model.addContact({ ...contact });
         this._contactList.addContact({ ...contact });
         this._modalAddContact.close();
     }
