@@ -109,12 +109,27 @@ body {
     max-width: 100%;
 }
 
+.contact__name {
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
 .add {
     color: white;
     padding: 2rem;
 }
 
 .add__title {
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.info {
+    color: white;
+    padding: 2rem;
+}
+
+.info__title {
     text-align: center;
     padding-bottom: 1rem;
 }

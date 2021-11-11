@@ -8,6 +8,7 @@ export default class ContactList {
 
         const li = document.createElement("li");
         li.classList.add("contacts__item");
+        li.setAttribute("id", contact.id);
 
         const article = document.createElement("article");
         article.classList.add("contact");
@@ -23,7 +24,7 @@ export default class ContactList {
         figure.appendChild(img);
 
         const div = document.createElement("div");
-        div.classList.add("contact__name");
+        div.classList.add("contact__title");
         article.appendChild(div);
 
         const h3 = document.createElement("h3");
@@ -33,5 +34,14 @@ export default class ContactList {
 
         fragment.appendChild(li);
         this._contactList.appendChild(fragment);
+    }
+
+    onclick(callback) {
+        this._contactList.onclick = (event) => {
+            const idElement = event.target.id;
+            if (event.target.localName == "article") {
+                callback(idElement);
+            }
+        };
     }
 }
