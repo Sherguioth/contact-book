@@ -5,7 +5,6 @@ export default class ContactList {
 
     addContact(contact) {
         const fragment = document.createDocumentFragment();
-        console.log(contact)
 
         const li = document.createElement("li");
         li.classList.add("contacts__item");
@@ -39,15 +38,9 @@ export default class ContactList {
 
     onClick(callback) {
         this._contactList.onclick = (event) => {
-            // TODO: Obtener correctamente el id del elemento li
-            const idElement = event.target.id;
-            console.log(event.target);
-            if (
-                event.target.localName == "article" ||
-                event.target.localName == "h3"
-            ) {
-                callback(idElement);
-            }
+            const idElement = String(event.target.id);
+            const id = idElement.split('_')[1];
+            callback(id);
         };
     }
 }

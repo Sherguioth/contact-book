@@ -1,6 +1,6 @@
 import NewContactForm from "./components/add-contact.js";
 import ContactList from "./components/contacts-list.js";
-import DetailsContact from "./components/details-contact.js";
+import DetailsContact from "./components/contact-details.js";
 
 export default class View {
     constructor() {
