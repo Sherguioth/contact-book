@@ -36,7 +36,7 @@ export default class View {
     }
 
     addContact(contact) {
-        this._model.addContact({ ...contact });
+        contact = this._model.addContact({ ...contact });
         this._contactList.addContact({ ...contact });
         this._modalAddContact.close();
     }

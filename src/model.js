@@ -38,10 +38,17 @@ export default class Model {
     }
 
     addContact(contact) {
-        this._contacts.push(contact);
+        console.log(contact)
+        const newContact = {
+            id: this._courrentId,
+            ...contact
+        }
+        console.log(newContact)
+        this._contacts.push(newContact);
+        this._courrentId++;
         this.save();
 
-        return { ...contact };
+        return { ...newContact };
     }
 
     editContact(newValues) {
