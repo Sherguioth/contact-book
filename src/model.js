@@ -43,4 +43,15 @@ export default class Model {
 
         return { ...contact };
     }
+
+    editContact(newValues) {
+        const contact = this.getContact(newValues.id);
+        contact.name = newValues.name;
+        contact.phone = newValues.phone;
+        contact.email = newValues.email;
+        contact.address = newValues.address;
+
+        console.log(this._contacts);
+        this.save();
+    }
 }

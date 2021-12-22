@@ -1,5 +1,8 @@
-export default class NewContactForm {
-    constructor() {
+import Modal from "./modal.js";
+
+export default class NewContactForm extends Modal {
+    constructor(modalParent) {
+        super(modalParent);
         this._name = document.getElementById("add-name");
         this._phone = document.getElementById("add-phone");
         this._email = document.getElementById("add-email");
@@ -7,7 +10,7 @@ export default class NewContactForm {
         this._btnAdd = document.getElementById("btn-add");
     }
 
-    getContactData(callback) {
+    onClick(callback) {
         this._btnAdd.onclick = (event) => {
             event.preventDefault();
 

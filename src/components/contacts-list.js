@@ -23,23 +23,21 @@ export default class ContactList {
         img.alt = "Avatar";
         figure.appendChild(img);
 
-        const div = document.createElement("div");
-        div.classList.add("contact__title");
-        article.appendChild(div);
-
         const h3 = document.createElement("h3");
         h3.classList.add("contact__name");
         h3.textContent = contact.name;
-        div.appendChild(h3);
+        article.appendChild(h3);
 
         fragment.appendChild(li);
         this._contactList.appendChild(fragment);
     }
 
-    onclick(callback) {
+    onClick(callback) {
         this._contactList.onclick = (event) => {
+            // TODO: Obtener correctamente el id del elemento li
             const idElement = event.target.id;
-            if (event.target.localName == "article") {
+            console.log(event.target);
+            if (event.target.localName == "article" || event.target.localName == "h3") {
                 callback(idElement);
             }
         };
