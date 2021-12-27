@@ -58,7 +58,6 @@ export default class Model {
         contact.email = newValues.email;
         contact.address = newValues.address;
 
-        console.log(this._contacts);
         this.save();
     }
 }

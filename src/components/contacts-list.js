@@ -3,6 +3,25 @@ export default class ContactList {
         this._contactList = document.getElementById("contacts-list");
     }
 
+    cleanList() {
+        this._contactList.innerHTML = "";
+    }
+
+    updateContact(contact) {
+        const id = contact.id;
+        let article = undefined;
+        const ul = Array.from(this._contactList.children);
+        ul.forEach((item) => {
+            const current = Number(item.id.split("_")[1]);
+            if (current === id) {
+                article = item.firstChild;
+            }
+        });
+
+        article.lastChild.textContent = contact.name;
+        console.log(article.lastChild.textContent);
+    }
+
     addContact(contact) {
         const fragment = document.createDocumentFragment();
 
@@ -29,7 +48,7 @@ export default class ContactList {
         const h3 = document.createElement("h3");
         h3.classList.add("contact__name");
         h3.textContent = contact.name;
-        h3.setAttribute("id", "name_" + contact.id)
+        h3.setAttribute("id", "name_" + contact.id);
         article.appendChild(h3);
 
         fragment.appendChild(li);
@@ -38,9 +57,12 @@ export default class ContactList {
 
     onClick(callback) {
         this._contactList.onclick = (event) => {
-            const idElement = String(event.target.id);
-            const id = idElement.split('_')[1];
-            callback(id);
+            if (event.target.localName === "ul") {
+            } else {
+                const idElement = String(event.target.id);
+                const id = idElement.split("_")[1];
+                callback(id);
+            }
         };
     }
 }

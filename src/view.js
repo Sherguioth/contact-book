@@ -7,8 +7,12 @@ export default class View {
         this._model = null;
         this._btnNewContact = document.getElementById("btn-new-contact");
         this._contactList = new ContactList();
-        this._modalAddContact = new NewContactForm(document.getElementById("add-modal"));
-        this._modalDetailsContact = new DetailsContact(document.getElementById("view-modal"));
+        this._modalAddContact = new NewContactForm(
+            document.getElementById("add-modal")
+        );
+        this._modalDetailsContact = new DetailsContact(
+            document.getElementById("view-modal")
+        );
 
         this.componentInicialization();
     }
@@ -21,7 +25,9 @@ export default class View {
         );
 
         this._contactList.onClick((id) => this.showContact(id));
-        this._modalDetailsContact.onClick((contact) => this.editContact(contact));
+        this._modalDetailsContact.onClick((contact) =>
+            this.editContact(contact)
+        );
     }
 
     setModel(model) {
@@ -30,6 +36,7 @@ export default class View {
 
     render() {
         const contacts = this._model.getContacts();
+        this._contactList.cleanList();
         contacts.forEach((contact) => {
             this._contactList.addContact({ ...contact });
         });
@@ -48,6 +55,6 @@ export default class View {
 
     editContact(contact) {
         this._model.editContact(contact);
-        this.render();
+        this._contactList.updateContact(contact);
     }
 }
